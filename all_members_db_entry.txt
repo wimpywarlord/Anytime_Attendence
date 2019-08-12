@@ -1,0 +1,38 @@
+db.viit_atts.insert({name:"Karan Mittal",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Naman Sharma",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"R Senthil Kumar",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Roshan Shah",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Akshit Sawnani",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Meet Shukla",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Advaitva Gupta",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Rishika Goyal",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Ayush Sharma",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Arpit jain",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Utkarsh Pandey",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Ritik Rai",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Nimish Batra",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Subhabrata Ghosh",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Muskan Sahni",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Anshumaan Singh",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Anam Khan",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:Janesh Rohira",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Ayushi udasi",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Shreeya Bhuwalka",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Muskan tewari",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Aryamaan Srivastava",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Koyya Khushhal Reddy",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Satakshi Roy",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Arushi Shah",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Aashish Raj",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Sanya Midha",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:" Siddharth Rao",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Sparsh Jain",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Sameer Kapil",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Nitin Vankadari",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Nisarga Gotekar",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Aryan Grover",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Emmadi Divya Srujana",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Aditya Kumar",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Kshitij Dhyani",no_of_present:1,no_of_absent:0});
+
+
