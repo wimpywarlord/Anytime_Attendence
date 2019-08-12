@@ -117,7 +117,8 @@ table {
 		</center>
 	</div>
 	<div id="att_box">
-		<div class="container" id="box_of_collection">
+		<form action="/post_att" method="post">
+			<div class="container" id="box_of_collection">
 			<ul class="collection">
 				<% for(var i=0;i< list_of_all_members.length ;i++) {  %>
 						<li class="collection-item">
@@ -129,7 +130,7 @@ table {
 			      					<div class="switch">
 									    <label>
 									      Absent
-									      <input type="checkbox">
+									      <input type="checkbox" name="student[<%= list_of_all_members[i].name %>]">
 									      <span class="lever"></span>
 									      Present
 									    </label>
@@ -145,12 +146,15 @@ table {
     		<br>
     		<br>
     		<div id="post_button">
-    			<button type="button" class="btn btn-outline-success btn-lg">POST ATTENDENCE</button>
+    			<button type="submit" class="btn btn-outline-success btn-lg">POST ATTENDENCE</button>
     		</div>
     		</center>
     		
 
 		</div>
+
+		</form>
+		
 	</div>
 </body>
 </html>
