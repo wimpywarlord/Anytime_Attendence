@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIIT_Attendence</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+	<style type="text/css">
+		
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+}
+#heading_box
+{
+   background-color:  #9BFF93;
+}
+#heading
+{
+    padding: 30px;
+    font-family: impact;
+    font-size: 100px;
+    color: white;
+}
+#att_box
+{
+    background-color: #FEE8D6;
+    height: 120%;
+}
+.h1,h1
+{
+       margin-bottom: 0px;
+}
+.collection
+{
+    margin-top: 0;
+}
+#box_of_collection
+{
+    padding-top: 100px;
+}
+#att_name
+{
+
+}
+#att_box_row_1
+{
+    /*border:2px solid red;*/
+    padding-top: 25px;
+    padding-left: 45px;
+   font-family: 'Lobster', cursive; 
+   font-size: 30px;
+}
+#post_button
+{
+	padding-bottom: 50px;
+}
+
+	</style>
+	<!-- FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+	<!-- FONT -->
+	
+</head>
+<body>
+	
+	<div id="heading_box">
+		<center>
+		<h1 id="heading">LETS TAKE SOME ATTENDENCE.</h1>
+		</center>
+	</div>
+	<div id="att_box">
+		<div class="container" id="box_of_collection">
+			<ul class="collection">
+				<% for(var i=0;i< list_of_all_members.length ;i++) {  %>
+						<li class="collection-item">
+			      			<div class="row" id="att_box_row_1">
+			      				<div class="col-lg-8" id="att_name">
+			      					<%= list_of_all_members[i].name %>
+			      				</div>
+			      				<div class="col-lg-4">
+			      					<div class="switch">
+									    <label>
+									      Absent
+									      <input type="checkbox">
+									      <span class="lever"></span>
+									      Present
+									    </label>
+									 </div> 
+			      				</div>
+			      			</div>
+			      		</li>
+				<% } %>
+    		</ul>
+    		<center>
+    		<br>
+    		<br>
+    		<br>
+    		<br>
+    		<div id="post_button">
+    			<button type="button" class="btn btn-outline-success btn-lg">POST ATTENDENCE</button>
+    		</div>
+    		</center>
+    		
+
+		</div>
+	</div>
+</body>
+</html>
