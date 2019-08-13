@@ -51,10 +51,54 @@ app.post("/post_att",function(req,res)
 	console.log(use_posted_att);
 	for(var i=0;i < use_posted_att.length ;i++)
 	{
-		console.log(use_posted_att[i]);
+	console.log(use_posted_att[i]);
+	viit_att.update({name : use_posted_att[i]},
+		{ $inc : {no_of_present : 1 } },function(err,res)
+		{
+			if(err)
+			{
+				console.log("OH NO");
+				// console.log(res);
+				// console.log(viit_att.name);
+				// console.log(err);
+			}
+			else
+			{
+				console.log("UPDATE SUCCESFULL");
+				// console.log(list_of_all_members);
+			}
+		});
+	}
+	for(var i=0 ;i < list_of_all_members.length ;i++)
+	{
+		var check = true ;
+		for(var j=0;j < use_posted_att.length ;j++)
+		{
+			if ( list_of_all_members[i] == use_posted_att[j])
+			{
+				check = false;
+			}
+		}
+		if (check == true )
+			{
+				viit_att.update({name : list_of_all_members[i].name},
+					{ $inc : {no_of_absent : 1 } },function(err,res)
+					{
+						if(err)
+						{
+							console.log("OH NO 2");
+							console.log(err);
+							// console.log(viit_att.name);
+							// console.log(err);
+						}
+						else
+						{
+							console.log("UPDATE SUCCESFULL 2");
+						}
+					});
+			}
 	}
 });
-
 
 
 
