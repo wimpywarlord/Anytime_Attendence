@@ -3,7 +3,8 @@ var mongoose =require("mongoose");
 var express= require("express");
 var app = express();
 
-mongoose.connect("mongodb://localhost/kshitij");
+mongoose.connect("mongodb+srv://kshitij:was789+*@cluster0-ysbt0.mongodb.net/test?retryWrites=true&w=majority");
+// mongodb+srv://kshitij:was789+*@cluster0-ysbt0.mongodb.net/test?retryWrites=true&w=majority
 
 var viit_att_schema = new mongoose.Schema({
 	name : String,
