@@ -154,6 +154,6 @@ app.post("/post_att",function(req,res)
 
 
 
-app.listen(process.env.port||3000,function(){
+app.listen(process.env.PORT || port , function(){
 	console.log("SERVER 3000 HAS STARTED");
 });
