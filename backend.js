@@ -3,7 +3,7 @@ var mongoose =require("mongoose");
 var express= require("express");
 var app = express();
 
-mongoose.connect("mongodb+srv://kshitij:was789+*@cluster0-ysbt0.mongodb.net/test?retryWrites=true&w=majority",{ 
+mongoose.connect("mongodb+srv://kshitij:was789%2B%2A@cluster0-ysbt0.mongodb.net/test?retryWrites=true&w=majority",{ 
     uri_decode_auth: true 
     },function(err,done){
     	if(err)
