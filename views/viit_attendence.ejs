@@ -3,6 +3,8 @@
 <head>
 	<title>VIIT_Attendence</title>
 	<link rel="stylesheet" type="text/css" href="viit_css.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
 	<style type="text/css">
@@ -58,26 +60,6 @@ div
 {
     /*border:2px solid red;*/
 }
-#half_box_1
-{
-    width: 50%;
-    height: 100vh;
-    background-color: #A0B6FF;
-}
-#half_box_2
-{
-    width: 50%;
-    height: 100vh;
-    background-color: #A0FFDC;
-}
-#plus_sign
-{
-    font-size: 100px;
-    z-index: 2;
-    position: absolute;
-    top: 40%;
-    width: 100%;
-}
 #plus
 {
     text-shadow: 2px 6px 3px black;
@@ -95,44 +77,177 @@ a
 #top_ab
 {
     background-color:  #FF8080  ;
-    height: 60vh;
+    height: 70%;
     width: 100%;
+    padding: 50px;
 }
 #att_history
 {
     width: 100%;
-    height: 40vh;
+    height: 100%;
     background-color: #00D1DA  ;
+}
+#my_name
+{
+	background-color: #45B39D  ;
+	text-align: center;
+}
+#text_my_name
+{
+	padding: 30px;
+    font-family: 'Anton', sans-serif;
+    font-size: 100px;
+    color: white;
+}
+#quote
+{
+	background-color: #5D6D7E;
+	text-align: center;
+}
+#quote_text
+{
+	padding: 30px;
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+    color: white;
+}
+#viit
+{
+	background-color: #FFC190;
+	text-align: center;
+}
+#text_viit
+{
+	padding: 30px;
+    font-family: 'Anton', sans-serif;
+    font-size: 100px;
+    color: white;
+}
+#att_his
+{
+	text-align: center;
+}
+#att_his_text
+{
+	padding: 30px;
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+    color: white;
+}
+.col-lg-6
+{
+	margin: 10px;
+}
+ul
+{
+	font-family: 'Roboto Condensed', sans-serif;
+}
+#list_att_his
+{
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 100px;
+}
+#att_button
+{
+	background-color: #85C1E9;
+	height: 40vh;
+	/*border:2px solid red;*/
+	text-align: center;
+	padding: 100px 0;
+}
+#top_at
+{
+	font-family: 'Anton', sans-serif;
+	font-size: 60px;
+    color: white;
+}
+.col-lg-6
+{
+	margin-left: 100px;
+}
+.btn btn-primary btn-lg btn-block
+{
+	font-family: 'Anton', sans-serif;
+}
+#center_top_att
+{
+	text-align: center;
 }
 #contact_us
 {
     width: 100%;
     height: 50vh;
     background-color: #C4C4C4  ;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+    padding: 100px;
 }
 	</style>
 </head>
 <body>
-	<div class="row">
-		<div class="col-lg-6" id="half_box_1"></div>
-		<div class="col-lg-6" id="half_box_2"></div>
+	<div id="viit">
+		<p id="text_viit">V innovate IT</p>
 	</div>
-	<div id="plus_sign" align="center">
-		<a href="">
-			<i class="fas fa-plus-square" id="plus"></i>
-		</a> 	
+	<div id="my_name">
+		<p id="text_my_name">KSHITIJ DHYANI</p>
 	</div>
-	<div id="top_att">
-		<p>top_att</p>
+	<div id="quote">
+		<p id="quote_text">What we think, we become.</p>
+	</div>
+	<div id="att_button">
+		<a href="/attendence">
+			<button type="button" class="btn btn-primary btn-lg btn-block">CLICK ME TO TAKE ATTENDENCE</button>
+		</a>
+		
 	</div>
 	<div id="top_ab">
-		<p>top_ab</p>
+		<div  id="center_top_att">
+			<p id="top_at">TOP ATTENDEES</p>
+		</div>
+		<%for(var i = 0 ;i< 3 ; i++){%>
+			<ul class="list-group" >
+	  			<li class="list-group-item">
+	  				<div class="col-lg-6">
+	  					<%= list_of_all_members_sorted[i].name%>
+	  					<br>
+	  					<br>
+	  					NO OF MEETINGS ATTENDED :
+	  					<%= list_of_all_members_sorted[i].no_of_present%>
+	  				</div>
+	  			</li>
+			</ul>
+		<%}%>
 	</div>
 	<div id="att_history">
-		<p>att_history</p>	
+		<div id="att_his">
+			<p id="att_his_text">ATTENDENCE HISTORY</p>
+		</div>
+		<div id="list_att_his">
+			<%for(var i = att_history_list.length -1 ; i >= att_history_list.length - 5 ;i--) {%>
+			<ul class="list-group" >
+	  			<li class="list-group-item">
+	  				<div class="col-lg-6"><%= att_history_list[i].time%></div>
+	  				<div class="col-lg-6"> STATISTICS : <%= att_history_list[i].att_stats%></div>
+	  				
+	  			</li>
+			</ul>	
+			<%}%>			
+		</div>
 	</div>
 	<div id="contact_us">
-		<p>contact_us</p>
+		<p>wimpywarlord@gmail.com</p>
+		<a href="https://www.facebook.com/kshitij.dhyani.3"><i class="fab fa-facebook-square"></i></a>
+		<a href="https://www.instagram.com/kshitij_dhyani/?hl=en">
+			<i class="fab fa-instagram"></i>
+		</a>
+		<a href="https://www.linkedin.com/in/kshitijdhyani/">
+			<i class="fab fa-linkedin-in"></i>
+		</a>
+		<a href="https://github.com/wimpywarlord">
+			<i class="fab fa-github-square"></i>
+		</a>
 	</div>
 </body>
 </html>

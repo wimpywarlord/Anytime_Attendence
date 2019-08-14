@@ -11,11 +11,19 @@ var viit_att_schema = new mongoose.Schema({
 	no_of_absent: Number
 });
 
+var att_history_schema = new mongoose.Schema({
+	time : String ,
+	att_stats : String,
+});
+
 app.use(bodyParser.urlencoded({extended:true}));
 
 var viit_att= mongoose.model("viit_att",viit_att_schema);
 
+var att_history = mongoose.model("att_history",att_history_schema);
+
 var list_of_all_members;
+var list_of_all_members_sorted;
 
 viit_att.find({},function(err,viit_atts)
 {
@@ -25,15 +33,39 @@ viit_att.find({},function(err,viit_atts)
 	else
 	{
 		list_of_all_members=viit_atts;
-		console.log(list_of_all_members[0]);
+		// console.log(list_of_all_members[0]);
+		// console.log(list_of_all_members);
+		list_of_all_members_sorted = list_of_all_members.sort(function(a,b) {
+				    return b.no_of_present - a.no_of_present ;
+				});
+		
+		console.log(list_of_all_members_sorted);
 	}
 });
 
 
 
+
+
+
+var att_history_list ;
+att_history.find({},function(err,att_history)
+{
+	if (err) {
+		console.log("OH NO ERROR");
+	}
+	else
+	{
+		att_history_list=att_history;
+		// console.log(att_history_list);
+		// console.log(att_history_list[0].time);
+	}
+});
+
+
 app.get("/",function(req,res)
 	{
-		res.render("viit_attendence.ejs");
+		res.render("viit_attendence.ejs",{att_history_list:att_history_list,list_of_all_members_sorted:list_of_all_members_sorted});
 	});
 
 app.get("/attendence",function(req,res)
@@ -45,7 +77,7 @@ var use_posted_att;
 
 app.post("/post_att",function(req,res)
 {
-	res.redirect("/attendence");
+	
 	// console.log(req.body);
 	use_posted_att = Object.keys(req.body.student);
 	console.log(use_posted_att);
@@ -64,7 +96,7 @@ app.post("/post_att",function(req,res)
 			}
 			else
 			{
-				console.log("UPDATE SUCCESFULL");
+				// console.log("UPDATE SUCCESFULL");
 				// console.log(list_of_all_members);
 			}
 		});
@@ -93,11 +125,29 @@ app.post("/post_att",function(req,res)
 						}
 						else
 						{
-							console.log("UPDATE SUCCESFULL 2");
+							// console.log("UPDATE SUCCESFULL 2");
 						}
 					});
 			}
 	}
+
+	var date = new Date();
+	var use_date = date.toString(); 
+	var total_att = list_of_all_members.length.toString();
+	var pre_att = (use_posted_att.length ).toString();
+	att_history.create({ time : use_date , att_stats : pre_att + "/" + total_att},function(err,att)
+		{
+			if(err)
+			{
+					console.log("OH NO 3");
+			}
+			else
+			{
+				console.log("SUCESS OF ATT att_history");
+			}
+
+		});
+	res.redirect("/");
 });
 
 
