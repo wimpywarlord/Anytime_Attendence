@@ -3,22 +3,19 @@ var mongoose =require("mongoose");
 var express= require("express");
 var app = express();
 
-// mongoose.connect("mongodb+srv://qazxsw:qazxsw@cluster0-ytkxo.mongodb.net/test?retryWrites=true&w=majority",{ 
-//     //uri_decode_auth: true 
-//     },function(err,done){
-//     	if(err)
-//     	{
-//     		console.log("OH NO 4");
-//     		console.log(err);
-//     	}
-//     	else
-//     	{
-//     		console.log("SUCESS");
-//     	}
-//     });
+mongoose.connect("mongodb+srv://qazxsw:qazxsw@cluster0-ytkxo.mongodb.net/test?retryWrites=true&w=majority",function(err,res)
+{
+		if(err)
+		{
+			console.log("mongo lab server not connected");
+			console.log(err);
+		}
+		else
+		{
+			console.log("Connectd to mongolab db");
+		}
+});
 
-mongoose.connect('mongodb+srv://qazxsw:qazxsw@cluster0-ytkxo.mongodb.net/test?retryWrites=true&w=majority');
-// mongodb+srv://kshitij:was789+*@cluster0-ysbt0.mongodb.net/test?retryWrites=true&w=majority
 
 var viit_att_schema = new mongoose.Schema({
 	name : String,
@@ -47,6 +44,8 @@ viit_att.find({},function(err,viit_atts)
 	}
 	else
 	{
+		console.log("fetching data now");
+		console.log(viit_atts);
 		list_of_all_members=viit_atts;
 		// console.log(list_of_all_members[0]);
 		// console.log(list_of_all_members);
