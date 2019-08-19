@@ -15,7 +15,7 @@ db.viit_atts.insert({name:"Subhabrata Ghosh",no_of_present:1,no_of_absent:0});
 db.viit_atts.insert({name:"Muskan Sahni",no_of_present:1,no_of_absent:0});
 db.viit_atts.insert({name:"Anshumaan Singh",no_of_present:1,no_of_absent:0});
 db.viit_atts.insert({name:"Anam Khan",no_of_present:1,no_of_absent:0});
-db.viit_atts.insert({name:Janesh Rohira",no_of_present:1,no_of_absent:0});
+db.viit_atts.insert({name:"Janesh Rohira",no_of_present:1,no_of_absent:0});
 db.viit_atts.insert({name:"Ayushi udasi",no_of_present:1,no_of_absent:0});
 db.viit_atts.insert({name:"Shreeya Bhuwalka",no_of_present:1,no_of_absent:0});
 db.viit_atts.insert({name:"Muskan tewari",no_of_present:1,no_of_absent:0});
