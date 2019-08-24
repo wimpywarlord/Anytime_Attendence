@@ -5,6 +5,8 @@ var app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 
+var att_history_list ;
+
 	mongoose.connect("mongodb+srv://wimpy_cool:warlord1@cluster0-phqid.mongodb.net/test?retryWrites=true&w=majority",{dbName : 'viit'},function(err,res)
 	{
 			if(err)
@@ -16,6 +18,19 @@ app.use(bodyParser.urlencoded({extended:true}));
 			{
 				// console.log(res);
 				console.log("Connectd to mongolab db");
+
+				att_history.find({},function(err,att_history)
+				{
+					if (err) {
+						console.log("OH NO ERROR");
+					}
+					else
+					{
+						att_history_list=att_history;
+						console.log(att_history_list);
+						console.log(att_history_list[0].time);
+					}
+				});
 			}
 	});
 
@@ -64,19 +79,7 @@ viit_atts.find({},function(err,res)
 
 
 
-var att_history_list ;
-att_history.find({},function(err,att_history)
-{
-	if (err) {
-		console.log("OH NO ERROR");
-	}
-	else
-	{
-		att_history_list=att_history;
-		console.log(att_history_list);
-		console.log(att_history_list[0].time);
-	}
-});
+
 
 
 app.get("/",function(req,res)
