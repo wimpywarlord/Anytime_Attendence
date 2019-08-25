@@ -5,7 +5,26 @@ var app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 
+var viit_att_schema = new mongoose.Schema({
+	name : String,
+	no_of_present: Number,
+	no_of_absent: Number
+});
+
+var att_history_schema = new mongoose.Schema({
+	time : String ,
+	att_stats : String,
+});
+
+
+var viit_atts= mongoose.model('viit_att',viit_att_schema);
+
+var att_history = mongoose.model('att_history',att_history_schema);
+
+var list_of_all_members;
+var list_of_all_members_sorted;
 var att_history_list ;
+
 
 	mongoose.connect("mongodb+srv://wimpy_cool:warlord1@cluster0-phqid.mongodb.net/test?retryWrites=true&w=majority",{dbName : 'viit'},function(err,res)
 	{
@@ -16,6 +35,27 @@ var att_history_list ;
 			}
 			else
 			{
+				viit_atts.find({},function(err,res)
+				{
+					if (err) {
+						console.log("OH NO ERROR");
+					}
+					else
+					{
+						console.log("fetching data now");
+						// console.log(res);
+						var viit_mem_list=res;
+						list_of_all_members=viit_mem_list;
+						// console.log(list_of_all_members[0]);
+						// console.log(list_of_all_members);
+						list_of_all_members_sorted = list_of_all_members.sort(function(a,b) {
+								    return b.no_of_present - a.no_of_present ;
+								});
+						
+						// console.log(list_of_all_members_sorted);
+					}
+				});
+
 				// console.log(res);
 				console.log("Connectd to mongolab db");
 
@@ -33,53 +73,6 @@ var att_history_list ;
 				});
 			}
 	});
-
-
-var viit_att_schema = new mongoose.Schema({
-	name : String,
-	no_of_present: Number,
-	no_of_absent: Number
-});
-
-var att_history_schema = new mongoose.Schema({
-	time : String ,
-	att_stats : String,
-});
-
-
-
-var viit_atts= mongoose.model('viit_att',viit_att_schema);
-
-var att_history = mongoose.model('att_history',att_history_schema);
-
-var list_of_all_members;
-var list_of_all_members_sorted;
-
-viit_atts.find({},function(err,res)
-{
-	if (err) {
-		console.log("OH NO ERROR");
-	}
-	else
-	{
-		console.log("fetching data now");
-		// console.log(res);
-		var viit_mem_list=res;
-		list_of_all_members=viit_mem_list;
-		// console.log(list_of_all_members[0]);
-		// console.log(list_of_all_members);
-		list_of_all_members_sorted = list_of_all_members.sort(function(a,b) {
-				    return b.no_of_present - a.no_of_present ;
-				});
-		
-		// console.log(list_of_all_members_sorted);
-	}
-});
-
-
-
-
-
 
 
 app.get("/",function(req,res)
