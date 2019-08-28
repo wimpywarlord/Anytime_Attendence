@@ -35,7 +35,7 @@ var att_history_list ;
 			}
 			else
 			{	
-				res.redirect("/");
+				
 				viit_atts.find({},function(err,res)
 				{
 					if (err) {
@@ -72,6 +72,7 @@ var att_history_list ;
 						console.log(att_history_list[0].time);
 					}
 				});
+				res.redirect("/");
 			}
 	});
 
