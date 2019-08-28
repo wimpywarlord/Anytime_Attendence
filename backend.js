@@ -34,7 +34,8 @@ var att_history_list ;
 				console.log(err);
 			}
 			else
-			{
+			{	
+				res.redirect("/");
 				viit_atts.find({},function(err,res)
 				{
 					if (err) {
