@@ -78,8 +78,9 @@ var att_history_list ;
 
 app.get("/",function(req,res)
 	{
-		console.log(att_history_list[0]);
-		res.render("viit_attendence.ejs",{att_history_list:att_history_list,list_of_all_members_sorted:list_of_all_members_sorted});
+		// console.log(att_history_list[0]);
+		res.render("login.ejs");
+		// res.render("viit_attendence.ejs",{att_history_list:att_history_list,list_of_all_members_sorted:list_of_all_members_sorted});
 	});
 
 app.get("/attendence",function(req,res)
@@ -87,7 +88,27 @@ app.get("/attendence",function(req,res)
 		res.render("take_att_page.ejs",{list_of_all_members:list_of_all_members});
 	});
 
+app.get('/viit',function(req,res)
+	{
+			res.render("viit_attendence.ejs",{att_history_list:att_history_list,list_of_all_members_sorted:list_of_all_members_sorted});
+	});	
+
 var use_posted_att;
+
+app.post("/log",function(req,res)
+		{
+			console.log(req.body);
+			if(req.body.username==="viitattproject" && req.body.password==="viitforever")
+			{
+				res.redirect('/viit');
+			}
+			else
+			{
+				res.redirect('/');
+			}
+		});
+
+
 
 app.post("/post_att",function(req,res)
 {
@@ -161,7 +182,7 @@ app.post("/post_att",function(req,res)
 			}
 
 		});
-	res.redirect("/");
+	res.redirect("/viit");
 });
 
 
