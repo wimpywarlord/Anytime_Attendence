@@ -21,6 +21,8 @@ var viit_atts= mongoose.model('viit_att',viit_att_schema);
 
 var att_history = mongoose.model('att_history',att_history_schema);
 
+var check_log_in=false;
+
 var list_of_all_members;
 var list_of_all_members_sorted;
 var att_history_list ;
@@ -90,7 +92,15 @@ app.get("/attendence",function(req,res)
 
 app.get('/viit',function(req,res)
 	{
+		if(check_log_in===true)
+		{
+			check_log_in=false;
 			res.render("viit_attendence.ejs",{att_history_list:att_history_list,list_of_all_members_sorted:list_of_all_members_sorted});
+		}
+		else
+		{
+			res.redirect('/');
+		}
 	});	
 
 var use_posted_att;
@@ -100,10 +110,12 @@ app.post("/log",function(req,res)
 			console.log(req.body);
 			if(req.body.username==="viitattproject" && req.body.password==="viitforever")
 			{
+				check_log_in=true;
 				res.redirect('/viit');
 			}
 			else
-			{
+			{	
+
 				res.redirect('/');
 			}
 		});
