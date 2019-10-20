@@ -4,6 +4,7 @@ var express= require("express");
 var app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
+express.static("public")
 
 var viit_att_schema = new mongoose.Schema({
 	name : String,
@@ -21,7 +22,6 @@ var viit_atts= mongoose.model('viit_att',viit_att_schema);
 
 var att_history = mongoose.model('att_history',att_history_schema);
 
-var check_log_in=false;
 
 var list_of_all_members;
 var list_of_all_members_sorted;
@@ -92,15 +92,8 @@ app.get("/attendence",function(req,res)
 
 app.get('/viit',function(req,res)
 	{
-		if(check_log_in===true)
-		{
-			check_log_in=false;
-			res.render("viit_attendence.ejs",{att_history_list:att_history_list,list_of_all_members_sorted:list_of_all_members_sorted});
-		}
-		else
-		{
-			res.redirect('/');
-		}
+
+		res.render("viit_attendence.ejs",{att_history_list:att_history_list,list_of_all_members_sorted:list_of_all_members_sorted});
 	});	
 
 var use_posted_att;
