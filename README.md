@@ -55,6 +55,8 @@ As the saying goes.
 > Your life will flash in front of your eyes one day,make sure its worth watching.
 A step by step series of examples that tell you how to get a development env running
 
+You need to know how to connect and manage mongodb atlas online so that you can add in the names of the members of your club/group.
+
 ### Installing
 
 Optionally I recommend you to download **Sublime text** 3.Its a amazing free editor from [here](https://www.sublimetext.com/3). 
