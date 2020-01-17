@@ -9,6 +9,14 @@ This has a wide range of application and can be actively used actively in the cl
 Right now the project is limited to a VinnovateIT lab in VIT-Vellore for testing the hypothesis of the need of the product and market alignment of the idea.
 In the later versions, one can expect the app to be generalised for all sorts of getting together.
 
+![alt-text](https://github.com/wimpywarlord/Anytime_Attendence/blob/master/donut.gif)
+
+Username : viitattproject
+
+Password : viitforever
+
+![alt-text](https://github.com/wimpywarlord/Anytime_Attendence/blob/master/Screenshot_1.png)
+
 ## Getting Started
 
 [![THINK](https://img.shields.io/badge/Stay-Motivated-teal.svg?style=for-the-badge)](https://github.com/wimpywarlord/Mess_It_Up) 
