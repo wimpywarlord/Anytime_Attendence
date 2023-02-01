@@ -11,7 +11,7 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
-    "mongoose": "^5.7.5",
+    "mongoose": "^5.13.15",
     "nodemon": "^1.19.1"
   },
   "devDependencies": {},
